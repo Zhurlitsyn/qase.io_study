@@ -1,2 +1,17 @@
-# Project exclude paths
-/target/
+# Compiled class file
+*.class
+
+# iml file
+*.iml
+
+#properties
+*.properties
+
+# out folder
+/.out
+
+# idea folder
+/.idea
+
+#target folder
+/.target
