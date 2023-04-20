@@ -8,8 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-class BasePage {
+import static com.codeborne.selenide.Configuration.*;
 
+class BasePage {
+    public static final String BASE_URL = "https://app.qase.io";
     public void waitForPageLoaded() {
         new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {

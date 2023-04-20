@@ -1,12 +1,16 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import pages.LoginPage;
 import pages.NewProjectPage;
+import pages.ProjectPage;
 
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -15,8 +19,18 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class BaseTest {
     LoginPage loginPage;
     NewProjectPage newProjectPage;
+    ProjectPage projectPage;
+
+  /*  @BeforeAll
+    static void setupAllureReports() {
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(false)
+                .savePageSource(true)
+        );
+    }*/
     @BeforeMethod
-    public void setUp(ITestContext testContext) {
+    public void setUp() {
         Configuration.timeout = 4000;
         Configuration.browser = "chrome";
         Configuration.headless = false;

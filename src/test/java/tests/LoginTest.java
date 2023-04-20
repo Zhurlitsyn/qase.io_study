@@ -15,12 +15,6 @@ public class LoginTest extends BaseTest {
         loginPage.openLP();
         loginPage.isPageOpened();
         loginPage.login();
-
-
-        /*open("/login");
-        $("#inputEmail").setValue("6131755@gmail.com");
-        $("#inputPassword").setValue("testtest23");
-        $("#btnLogin").click();
-        $("#createButton").shouldBe(Condition.visible);*/
+        $("#createButton").shouldBe(Condition.visible);
     }
 }

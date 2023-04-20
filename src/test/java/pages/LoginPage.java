@@ -21,22 +21,21 @@ public class LoginPage extends BasePage {
     @Step("Opening Login Page")
     public void openLP() {
         log.info("Opening Login Page");
-        open("/login");
+        open(BASE_URL);
     }
 
     public void isPageOpened() {
-        $("#createButton").shouldBe(Condition.visible);
+        $("#btnLogin").shouldBe(Condition.visible);
     }
 
     @Step("Login by user")
-    public NewProjectPage login() {
+    public void login() {
         log.info("Login by user");
         String logUser = System.getProperty("username", PropertyReader.getProperty("USERNAME"));
         String logPswrd = System.getProperty("password", PropertyReader.getProperty("PASSWORD"));
         $(USERNAME_INPUT).setValue(logUser);
         $(PASSWORD_INPUT).setValue(logPswrd);
         $(LOGIN_BUTTON).click();
-        return new NewProjectPage();
     }
 }
 
